@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>漢方学習アプリ ポータル</title>
+<title>みんなで学ぶ漢方学習ツール</title>
 <style>
   :root{
     --bg:#f4f1ea;
@@ -31,8 +31,25 @@
   }
   header h1{
     font-size:30px;font-weight:800;letter-spacing:.04em;
-    color:var(--ink);margin-bottom:12px;
+    color:var(--ink);margin-bottom:10px;
   }
+  header .lead{
+    font-size:18px;font-weight:700;color:var(--accent);
+    margin-bottom:14px;
+    display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;
+  }
+  header .lead .live{
+    font-size:11px;font-weight:700;letter-spacing:.08em;
+    color:#fff;background:#3f8f5b;
+    padding:3px 9px;border-radius:999px;
+    display:inline-flex;align-items:center;gap:5px;
+  }
+  header .lead .live::before{
+    content:"";width:7px;height:7px;border-radius:50%;
+    background:#fff;display:inline-block;
+    animation:pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
   header p{color:var(--sub);font-size:15px;}
   .grid{display:flex;flex-direction:column;gap:18px;}
   .card{
@@ -64,14 +81,34 @@
   .body .desc{font-size:13.5px;color:var(--sub);}
   .arrow{flex:0 0 auto;color:var(--accent-soft);font-size:22px;transition:transform .18s ease;}
   .card:hover .arrow{transform:translateX(4px);}
-  footer{text-align:center;margin-top:42px;color:var(--accent-soft);font-size:12.5px;letter-spacing:.05em;}
+  .contact{
+    margin-top:40px;text-align:center;
+  }
+  .contact a{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:15px;font-weight:700;
+    color:var(--accent);text-decoration:none;
+    border:1.5px solid var(--accent-soft);
+    background:#fff;
+    padding:13px 26px;border-radius:999px;
+    box-shadow:0 2px 6px rgba(80,60,30,.06);
+    transition:background .18s ease, color .18s ease, transform .18s ease;
+  }
+  .contact a:hover{
+    background:var(--accent);color:#fff;
+    transform:translateY(-2px);
+  }
+  .contact .mailicon{font-size:17px;}
+  footer{text-align:center;margin-top:30px;color:var(--accent-soft);font-size:12.5px;letter-spacing:.05em;}
   @media(max-width:520px){
     body{padding:32px 14px 48px;}
     header h1{font-size:23px;}
+    header .lead{font-size:16px;}
     .card{padding:18px 18px;gap:16px;}
     .num{width:46px;height:46px;font-size:22px;}
     .body .title{font-size:16px;}
     .arrow{display:none;}
+    .contact a{font-size:14px;padding:12px 20px;}
   }
 </style>
 </head>
@@ -80,6 +117,7 @@
     <header>
       <div class="mark">KAMPO  LEARNING</div>
       <h1>漢方学習アプリ ポータル</h1>
+      <div class="lead">【みんなで学ぶ漢方学習ツール】<span class="live">Live Update</span></div>
       <p>学びたい項目を選んでください</p>
     </header>
 
@@ -118,6 +156,12 @@
           <div class="desc">症例から最適な煎じ薬（生薬の組み合わせ）を組み立てる漢方学習アプリ</div>
         </div>
         <div class="arrow">›</div>
+      </a>
+    </div>
+
+    <div class="contact">
+      <a href="mailto:shin.takayama.c4@tohoku.ac.jp?subject=漢方学習ツールについて">
+        <span class="mailicon">✉</span>ご意見、勉強会の依頼はこちらから
       </a>
     </div>
 
